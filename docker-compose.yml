@@ -2,14 +2,19 @@ version: "3"
 
 services:
   jupyterlab:
-    image: jupyter/base-notebook:latest
+    build:
+      context: .
+      dockerfile: ./Dockerfile
     user: root
     network_mode: bridge
     ports:
       - 8888:8888
     volumes:
       - ./jupyter_notebook_config.py:/home/jovyan/.jupyter/jupyter_notebook_config.py
+      - ./admin:/home/jovyan/admin
       - ./work:/home/jovyan/work
+      - ./envs:/opt/conda/envs
     environment:
       - JUPYTER_ENABLE_LAB=yes
       - GRANT_SUDO=yes
+      - RESTARTABLE=yes

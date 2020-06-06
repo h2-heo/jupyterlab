@@ -61,3 +61,9 @@ target/
 
 # Notebook Checkpoints
 .ipynb_checkpoints/
+
+# User files
+work/*
+!work/.gitkeep
+envs/*
+!envs/.gitkeep
