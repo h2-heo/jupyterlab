@@ -3,6 +3,7 @@ version: "3"
 services:
   jupyterlab:
     image: jupyter/base-notebook:latest
+    user: root
     network_mode: bridge
     ports:
       - 8888:8888
@@ -10,3 +11,4 @@ services:
       - ./jupyter_notebook_config.py:/home/jovyan/.jupyter/jupyter_notebook_config.py
     environment:
       - JUPYTER_ENABLE_LAB=yes
+      - GRANT_SUDO=yes
