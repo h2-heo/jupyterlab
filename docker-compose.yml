@@ -18,3 +18,4 @@ services:
       - JUPYTER_ENABLE_LAB=yes
       - GRANT_SUDO=yes
       - RESTARTABLE=yes
+    restart: always
